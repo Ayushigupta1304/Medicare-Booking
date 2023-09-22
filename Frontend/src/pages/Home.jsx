@@ -6,12 +6,17 @@ import icon01 from "../assets/image/icon01.png";
 import icon02 from "../assets/image/icon02.png";
 import icon03 from "../assets/image/icon03.png";
 import featureImg from "../assets/image/feature-img.png";
+import faqImg from "../assets/image/faq-img.png"
 import videoIcon from "../assets/image/video-icon.png";
 import avatarIcon from "../assets/image/avatar-icon.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import About from "../components/About/About";
 import ServiceList from "../components/Services/Services.List";
+import DoctorCard from "../components/Doctors/DoctorCard";
+import DoctorList from "../components/Doctors/DoctorList";
+import FaqList from "../components/Faq/FaqList";
+
 
 const Home = () => {
   return (
@@ -223,16 +228,11 @@ const Home = () => {
               </div>
               {/* Feature Image */}
               <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-o">
-
                 <img src={featureImg} className="w-3/4 " alt="" />
                 <div
                   className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px]
                 md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]"
                 >
-
-
-
-
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[6px] lg:gap-3">
                       <p
@@ -248,42 +248,82 @@ const Home = () => {
                       >
                         10:00AM
                       </p>
-                    
                     </div>
 
-                    <span className="w-5 h-5 lg:w-[34px] lg:h[34px] flex items-center justify-center
-                    bg-yellowColor rounded py-1 px-[6px] lg:py-3 lg:px-[9px]">
-                      <img src={videoIcon} alt=""/>
-
-                      
+                    <span
+                      className="w-5 h-5 lg:w-[34px] lg:h[34px] flex items-center justify-center
+                    bg-yellowColor rounded py-1 px-[6px] lg:py-3 lg:px-[9px]"
+                    >
+                      <img src={videoIcon} alt="" />
                     </span>
                   </div>
-                  <div className="w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-1 lg:py-[6px] lg:px-[10px]
-                    text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4">
-                      Consultation
-                    </div >
+                  <div
+                    className="w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-1 lg:py-[6px] lg:px-[10px]
+                    text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4"
+                  >
+                    Consultation
+                  </div>
 
-                    <div className="flex items-center gap-[60px] lg:gap-[10px] mt-2 lg:mt-[18px]">
-                      <img src={avatarIcon} alt=""/>
-                      <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor"> Dr.Vishal Yadav</h4>
-
-                    </div>
-
-
-
-
-
+                  <div className="flex items-center gap-[60px] lg:gap-[10px] mt-2 lg:mt-[18px]">
+                    <img src={avatarIcon} alt="" />
+                    <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">
+                      {" "}
+                      Dr.Vishal Yadav
+                    </h4>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
         {/* Feature Section  End */}
-        
+        {/* Our great Doctor */}
+        <section>
+          <div className="container">
+            <div className="xl:w-[470px] mx-auto">
+              <h2 className="heading text-center"> Our Great Doctors </h2>
+              <p className="text_para text-center">
+                World-class care for everyone.Our health System offers
+                unmatched, expert health care.
+              </p>
+            </div>
 
-
-
+            <DoctorList/>
+          </div>
+        </section>
+        {/* Our great Doctor */}
       </>
+
+      {/* Faqs Section */}
+      <section>
+        <div className="container">
+          <div className="flex justify-between gap-[50px] lg:gap-0 ">
+            <div className="w=1/2 hidden md:block">
+              <img src={faqImg} alt=""/>
+
+            </div>
+
+            <div className="w-full md:w-1/2">
+              <h2 className="heading">
+                   Most questions by our beloved patients
+              </h2>
+
+              <FaqList/>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+     {/* Faqs Section */}
+
+     
     </>
   );
 };
